@@ -1,8 +1,8 @@
 # spring-jndi-lookup
 How to lookup data source from JNDI using spring 
 
-Server.xml
------------
+# Server.xml
+
 <Resource name="jdbc/javatechie" 
       global="jdbc/javatechie" 
       auth="Container" 
@@ -17,16 +17,15 @@ Server.xml
       minIdle="5" 
       maxWait="10000"/>
 	  
-context.xml:
-------------	  
+# context.xml:	  
 
 <ResourceLink name="jdbc/javatechie"
                 	global="jdbc/javatechie"
                     auth="Container"
                     type="javax.sql.DataSource" />
 					
-Config:
-----------
+# Config:
+
 <jee:jndi-lookup id="dataSource" jndi-name="jdbc/javatechie"
    			expected-type="javax.sql.DataSource" />					
 					
